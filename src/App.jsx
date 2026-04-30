@@ -6,6 +6,7 @@ import AdminProducts from './pages/AdminProducts';
 import AdminRoute from './components/AdminRoute';
 import AdminRegister from './pages/AdminRegister';
 import Home from './components/Home';
+import CategoryPage from './pages/CategoryPage';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element={< Home/>}/>
         <Route path="admin-login" element={< AdminLogin/>} />
+        <Route path='/category/:categoryId' element={< CategoryPage/>}/>
 
           <Route
           path="/admin"

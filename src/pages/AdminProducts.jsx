@@ -550,18 +550,22 @@ const handleSaveProduct = async (id) => {
           />
 
           <select
-            name="categoryId"
-            value={productForm.categoryId}
-            onChange={handleProductChange}
-          >
-            <option value="">Выберите категорию</option>
+  name="categoryId"
+  value={productForm.categoryId}
+  onChange={handleProductChange}
+>
+  <option value="">Выберите категорию товара</option>
 
-            {categories.map((category) => (
-              <option key={category.id} value={category.id}>
-                {category.title}
-              </option>
-            ))}
-          </select>
+  {categories.length === 0 && (
+    <option disabled>Сначала добавьте категории ниже</option>
+  )}
+
+  {categories.map((category) => (
+    <option key={category.id} value={category.id}>
+      {category.title}
+    </option>
+  ))}
+</select>
 
           <select
             name="brandId"
@@ -700,18 +704,22 @@ const handleSaveProduct = async (id) => {
       />
 
       <select
-        name="categoryId"
-        value={productEditForm.categoryId}
-        onChange={handleProductEditChange}
-      >
-        <option value="">Выберите категорию</option>
+  name="categoryId"
+  value={productEditForm.categoryId}
+  onChange={handleProductEditChange}
+>
+  <option value="">Выберите категорию товара</option>
 
-        {categories.map((category) => (
-          <option key={category.id} value={category.id}>
-            {category.title}
-          </option>
-        ))}
-      </select>
+  {categories.length === 0 && (
+    <option disabled>Сначала добавьте категории ниже</option>
+  )}
+
+  {categories.map((category) => (
+    <option key={category.id} value={category.id}>
+      {category.title}
+    </option>
+  ))}
+</select>
 
       <select
         name="brandId"

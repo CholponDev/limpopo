@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import style from "../styles/Home.module.css";
+import { Link } from "react-router-dom";
 
 import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase/firebase";
@@ -128,12 +129,11 @@ function Home() {
         <div className={style.heroContent}>
           <span className={style.label}>Limpopo Karakol</span>
 
-          <h1>Косметика и уходовые средства для вашей красоты</h1>
-
-          <p>
-            Уход для лица, тела, волос, декоративная косметика, парфюмерия и
-            товары для дома в одном месте.
-          </p>
+           <h1 className={style.heroTitle}>Limpopo</h1>
+ 
+           <p className={style.heroSlogan}>
+              Здесь начинается ваш любимый уход
+           </p>
 
           <div className={style.heroActions}>
             <a href="#products" className={style.primaryBtn}>
@@ -234,7 +234,9 @@ function Home() {
                   "Товары этой категории можно добавить через админ-панель."}
               </p>
 
-              <a href="#products">Смотреть товары</a>
+              <Link to={`/category/${category.id}`}>
+                 Смотреть товары
+              </Link>
             </article>
           ))}
 

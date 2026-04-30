@@ -16,7 +16,7 @@ function Header() {
   return (
     <header className={style.header}>
       <div className={style.topLine}>
-        <p>Косметика • Уход • Парфюм • Химия • Дом</p>
+        <p>Уход, который подчёркивает вашу естественную красоту</p>
       </div>
 
       <div className={style.container}>
@@ -53,11 +53,8 @@ function Header() {
               <option value="hair">Для волос</option>
               <option value="body">Для тело</option>
               <option value="hand">Для рук</option>
-              <option value="BB">BB</option>
               <option value="perfume">Парфюм</option>
               <option value="brush">Кисти</option>
-              <option value="man">Мужские наборы</option>
-              <option value="washer">Мыломойка</option>
             </select>
 
             <button type="submit">Найти</button>
