@@ -1,0 +1,376 @@
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: rgba(239, 206, 238, 0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(240, 153, 233, 0.12);
+}
+
+.topLine {
+  width: 100%;
+  background: linear-gradient(90deg, #db6bc3, #dfa9d3, #dc78c6);
+  padding: 7px 16px;
+  text-align: center;
+}
+
+.topLine p {
+  margin: 0;
+  color: #d604a8;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 14px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logoBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.logoIcon {
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+
+.logoIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.logoText h2 {
+  margin: 0;
+  color: #4a2f28;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.logoText p {
+  margin: 4px 0 0;
+  color: #d307cd;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  background: rgba(255, 255, 255, 0.75);
+  padding: 5px;
+  border-radius: 999px;
+  border: 1px solid rgba(171, 0, 151, 0.16);
+  box-shadow: 0 8px 20px rgba(171, 0, 151, 0.08);
+}
+
+.searchBox input {
+  width: 130px;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 8px 9px;
+
+  color: #650055;
+  font-size: 13px;
+}
+
+.searchBox input::placeholder {
+  color: rgba(101, 0, 85, 0.55);
+}
+
+
+.searchBox select {
+  border: none;
+  outline: none;
+  background: #f8d8f3;
+  color: #790065;
+
+  padding: 8px 9px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.searchBox button {
+  border: none;
+  background: linear-gradient(135deg, #ab0097, #d855d4);
+  color: white;
+
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.searchBox button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(171, 0, 151, 0.25);
+}
+
+.nav {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+
+  white-space: nowrap;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #89006e;
+  font-size: 15px;
+  font-weight: 600;
+  position: relative;
+  transition: 0.25s ease;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 2px;
+  border-radius: 20px;
+  background: #c348ab;
+  transition: 0.25s ease;
+}
+
+.nav a:hover {
+  color: #c348ab;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.instaBtn {
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, #ab0097, #d855d4);
+  padding: 11px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(180, 107, 91, 0.25);
+  transition: 0.25s ease;
+}
+
+.instaBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(180, 107, 91, 0.34);
+}
+
+option{
+    background: #f8d8f3;
+    color: #790065;
+    padding: 8px 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Планшет */
+@media (max-width: 850px) {
+  .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logoBox {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .searchBox {
+  order: 2;
+  width: 100%;
+  max-width: 520px;
+  justify-content: center;
+}
+
+.searchBox input {
+  width: 100%;
+}
+}
+
+/* Телефон */
+@media (max-width: 480px) {
+  .topLine p {
+    font-size: 12px;
+  }
+
+  .container {
+    padding: 14px 16px;
+  }
+
+  .logoIcon {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+  }
+
+  .logoText h2 {
+    font-size: 23px;
+  }
+
+  .nav {
+    gap: 14px;
+  }
+
+  .nav a {
+    font-size: 14px;
+  }
+
+  .instaBtn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .searchBox {
+  flex-direction: column;
+  border-radius: 22px;
+  padding: 10px;
+}
+
+.searchBox input,
+.searchBox select,
+.searchBox button {
+  width: 100%;
+}
+
+.searchBox input {
+  text-align: center;
+}
+}
+
+
+@media (max-width: 1100px) {
+  .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logoBox {
+    justify-content: center;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .actions {
+    order: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 14px 16px;
+  }
+
+  .logoIcon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .logoText h2 {
+    font-size: 21px;
+  }
+
+  .logoText p {
+    font-size: 11px;
+  }
+
+  .nav {
+    gap: 12px;
+  }
+
+  .nav a {
+    font-size: 14px;
+  }
+
+  .searchBox {
+    width: 100%;
+    flex-direction: column;
+    border-radius: 22px;
+    padding: 10px;
+  }
+
+  .searchBox input,
+  .searchBox select,
+  .searchBox button {
+    width: 100%;
+  }
+
+  .searchBox input {
+    text-align: center;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .instaBtn {
+    width: 100%;
+    text-align: center;
+  }
+}
