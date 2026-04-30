@@ -443,6 +443,241 @@
   background: #fff7fd;
 }
 
+.catalogBlock {
+  max-width: 1280px;
+  margin: 28px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.catalogPanel {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(155, 22, 141, 0.14);
+  border-radius: 28px;
+  padding: 22px;
+  box-shadow: 0 18px 40px rgba(155, 22, 141, 0.1);
+}
+
+.catalogPanel h2 {
+  margin: 0 0 16px;
+  color: #5d1a57;
+}
+
+.smallForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.smallForm input,
+.smallForm textarea,
+.editBox input,
+.editBox textarea {
+  width: 100%;
+  border: 1px solid rgba(155, 22, 141, 0.18);
+  outline: none;
+  border-radius: 16px;
+  padding: 12px 14px;
+  background: #fff;
+  color: #4b1746;
+  font-size: 14px;
+}
+
+.smallForm textarea,
+.editBox textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.smallForm button,
+.editActions button {
+  border: none;
+  background: linear-gradient(135deg, #9b168d, #d85ad0);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.miniList {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.miniItem {
+  background: #fff;
+  border: 1px solid rgba(155, 22, 141, 0.12);
+  border-radius: 18px;
+  padding: 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.miniItem h3 {
+  margin: 0;
+  color: #4b1746;
+  font-size: 16px;
+}
+
+.miniItem p {
+  margin: 4px 0 0;
+  color: #8b5c84;
+  font-size: 13px;
+}
+
+.brandMini {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brandMini img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #fff7fd;
+}
+
+.itemActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.itemActions button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.itemActions button:first-child {
+  background: #f5e6ff;
+  color: #8b168d;
+}
+
+.itemActions button:last-child {
+  background: #fff0f7;
+  color: #c30055;
+}
+
+.editBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.editActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.editActions button:last-child {
+  background: #f1e7f3;
+  color: #6d4c68;
+}
+
+.productActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.editBtn {
+  width: 100%;
+  border: none;
+  background: #f5e6ff;
+  color: #8b168d;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.editBtn:hover {
+  background: #ecd1ff;
+}
+
+.productActions .deleteBtn {
+  width: 100%;
+}
+
+.productEditChecks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.productEditChecks label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #65305f;
+  font-size: 14px;
+}
+
+.productEditChecks input {
+  width: auto;
+}
+
+.editBox select {
+  width: 100%;
+  border: 1px solid rgba(155, 22, 141, 0.18);
+  outline: none;
+  border-radius: 16px;
+  padding: 12px 14px;
+  background: #fff;
+  color: #4b1746;
+  font-size: 14px;
+}
+
+@media (max-width: 950px) {
+  .catalogBlock {
+    grid-template-columns: 1fr;
+  }
+
+  .miniItem {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .miniItem {
+    flex-direction: column;
+  }
+
+  .itemActions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .itemActions button {
+    width: 100%;
+  }
+
+  .editActions {
+    flex-direction: column;
+  }
+
+  .editActions button {
+    width: 100%;
+  }
+}
+
 @media (max-width: 950px) {
   .catalogGrid {
     grid-template-columns: 1fr;
