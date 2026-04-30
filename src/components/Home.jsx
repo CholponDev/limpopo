@@ -12,6 +12,8 @@ function Home() {
   const [brands, setBrands] = useState([]);
   const [products, setProducts] = useState([]);
 
+  const [showPenguinText, setShowPenguinText] = useState(false);
+
   const [activeSlide, setActiveSlide] = useState(0);
 
   const sortByDate = (items) => {
@@ -126,99 +128,76 @@ function Home() {
   return (
     <main className={style.home} id="home">
       <section className={style.hero}>
-        <div className={style.heroContent}>
-          <span className={style.label}>Limpopo Karakol</span>
-
-           <h1 className={style.heroTitle}>Limpopo</h1>
- 
-           <p className={style.heroSlogan}>
-              Здесь начинается ваш любимый уход
-           </p>
-
-          <div className={style.heroActions}>
-            <a href="#products" className={style.primaryBtn}>
-              Смотреть товары
-            </a>
-
-            <a href="#brands" className={style.secondaryBtn}>
-              Наши бренды
-            </a>
-          </div>
-        </div>
-
-        <div
-          className={`${style.heroSlider} ${
-            currentSlide.image ? style.heroSliderWithBg : ""
-          }`}
-          style={
-            currentSlide.image
-              ? {
-                  backgroundImage: `linear-gradient(
-                rgba(25, 8, 30, 0.25),
-              rgba(25, 8, 30, 0.38)
-                  ), url(${currentSlide.image})`,
-                }
-              : undefined
+  <div
+    className={style.heroContent}
+    style={
+      heroSlides[0]?.image
+        ? {
+            backgroundImage: `linear-gradient(
+              rgba(45, 12, 48, 0.45),
+              rgba(45, 12, 48, 0.55)
+            ), url(${heroSlides[0].image})`,
           }
-        >
-          <div className={style.slideTop}>
-            <span>{currentSlide.badge}</span>
-            <p>{currentSlide.smallText}</p>
-          </div>
+        : undefined
+    }
+  >
+    <div className={style.heroTextBox}>
+      <span className={style.label}>Limpopo Karakol</span>
 
-          <div className={style.slideContent}>
-            <h3>{currentSlide.title}</h3>
-            <p>{currentSlide.text}</p>
-          </div>
+      <h1 className={style.heroTitle}>Limpopo</h1>
 
-          {activeSlide === 0 && (
-            <div className={style.miniCards}>
-              <div>
-                <strong>{categories.length}</strong>
-                <span>Категорий</span>
-              </div>
+      <p className={style.heroSlogan}>
+        Здесь начинается ваш любимый уход
+      </p>
 
-              <div>
-                <strong>{brands.length}</strong>
-                <span>Брендов</span>
-              </div>
+      <div className={style.heroActions}>
+        <a href="#products" className={style.primaryBtn}>
+          Смотреть товары
+        </a>
 
-              <div>
-                <strong>{products.length}</strong>
-                <span>Товаров</span>
-              </div>
-            </div>
-          )}
+        <a href="#brands" className={style.secondaryBtn}>
+          Наши бренды
+        </a>
+      </div>
+    </div>
+  </div>
 
-          <div className={style.sliderControls}>
-            <button type="button" onClick={prevSlide}>
-              ←
-            </button>
+  <div className={style.penguinCard}>
+    <div className={style.penguinBadge}>Limpopo choice</div>
 
-            <div className={style.dots}>
-              {heroSlides.map((_, index) => (
-                <button
-                  key={index}
-                  type="button"
-                  className={activeSlide === index ? style.activeDot : ""}
-                  onClick={() => setActiveSlide(index)}
-                />
-              ))}
-            </div>
+    <h2>Пингвин выбрал Limpopo</h2>
 
-            <button type="button" onClick={nextSlide}>
-              →
-            </button>
-          </div>
-        </div>
-      </section>
+    <p className={style.penguinIntro}>
+      Даже самый милый пингвин знает, где начинается любимый уход.
+    </p>
+
+    <button
+      type="button"
+      className={style.penguinBtn}
+      onClick={() => setShowPenguinText(!showPenguinText)}
+    >
+      {showPenguinText ? "Скрыть историю" : "Открыть историю"}
+    </button>
+
+    {showPenguinText && (
+      <div className={style.penguinHiddenText}>
+        <p>
+          Пингвин долго искал место, где можно найти всё для красоты:
+          уход для лица, тела, волос, косметику, ароматы и уютные товары
+          для дома. И однажды он выбрал Limpopo — потому что здесь уход
+          становится любимым ритуалом.
+        </p>
+      </div>
+    )}
+  </div>
+</section>
 
       <section className={style.categories} id="categories">
         <div className={style.sectionHeader}>
           <span>Категории</span>
           <h2>Подберите товары по направлению</h2>
           <p>
-            Категории добавляются, удаляются и редактируются через админ-панель.
+            Выберите своё средство для заботы и уверенности. У нас все уходы которые подчёркивают вашу естественную красоту
           </p>
         </div>
 
@@ -253,7 +232,7 @@ function Home() {
           <span>Товары</span>
           <h2 id="popular">Популярные товары</h2>
           <p>
-            Товары появляются здесь после добавления через админ-страницу.
+            Популярный уход для вашей красоты и настроение.
           </p>
         </div>
 
@@ -379,8 +358,7 @@ function Home() {
           <span>Бренды</span>
           <h2>Бренды, с которыми работает магазин</h2>
           <p>
-            Список брендов берётся из Firebase. Если удалить бренд в админке,
-            он исчезнет и с главной страницы.
+            Бренды, которым доверяют в уходе и красоте
           </p>
         </div>
 

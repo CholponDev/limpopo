@@ -20,7 +20,9 @@
   align-items: center;      /* по вертикали центр */
   justify-content: center;  /* по горизонтали центр */
 
-  background: linear-gradient(90deg, #f6b6e8, #ffeffc, #f6b6e8);
+  /* background: linear-gradient(90deg, #f6b6e8, #ffeffc, #f6b6e8); */
+  background: linear-gradient(90deg, #faf7f9, #f6dff2, #ffffff);
+
 
   font-family: "Inter", "Arial", sans-serif;
   font-size: 14px;

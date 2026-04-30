@@ -8,25 +8,35 @@
 /* HERO */
 
 .hero {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 90px 24px 70px;
-
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: 48px;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  align-items: stretch;
+  padding: 40px 24px;
 }
 
 .heroContent {
-  position: relative;
-  z-index: 2;
-  max-width: 760px;
-  margin: 0 auto;
+  min-height: 520px;
+  border-radius: 32px;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 24px 60px rgba(60, 20, 60, 0.18);
+}
+.heroTextBox {
+  max-width: 620px;
+  padding: 40px 24px;
   text-align: center;
   color: #ffffff;
-  padding: 120px 20px;
 }
+
 
 .label {
   display: inline-block;
@@ -34,13 +44,12 @@
   padding: 8px 18px;
 
   border-radius: 999px;
-  background: rgba(255, 239, 252, 0.22);
+  background: rgba(255, 255, 255, 0.22);
   border: 1px solid rgba(255, 255, 255, 0.35);
 
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  color: #fff;
 }
 
 .label,
@@ -90,50 +99,169 @@
 
 .heroTitle {
   margin: 0;
-  font-size: clamp(54px, 9vw, 110px);
+  font-size: clamp(56px, 9vw, 112px);
+  font-family: "Playfair Display", "Georgia", serif;
   font-weight: 800;
   line-height: 1;
-  letter-spacing: 1px;
-
-  font-family: "Playfair Display", "Georgia", serif;
 }
 
 .heroSlogan {
   margin: 22px auto 0;
   max-width: 520px;
-
   font-size: clamp(18px, 3vw, 28px);
-  font-weight: 400;
   line-height: 1.5;
   color: #fff7fd;
 }
 
+.heroActions {
+  margin-top: 34px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
 .primaryBtn,
 .secondaryBtn {
-  text-decoration: none;
+  padding: 13px 22px;
   border-radius: 999px;
-  padding: 14px 22px;
-
+  text-decoration: none;
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 600;
   transition: 0.25s ease;
 }
 
 .primaryBtn {
-  color: #fff;
-  background: linear-gradient(135deg, #9b168d, #d855d4);
-  box-shadow: 0 14px 30px rgba(155, 22, 141, 0.24);
+  background: #ffffff;
+  color: #7b3d68;
 }
 
 .secondaryBtn {
-  color: #8d147f;
-  background: #fff;
-  border: 1px solid rgba(155, 22, 141, 0.16);
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.45);
 }
 
 .primaryBtn:hover,
 .secondaryBtn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+}
+
+/* RIGHT CARD */
+
+
+.penguinCard {
+  min-height: 520px;
+  border-radius: 32px;
+  padding: 36px;
+
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.9), transparent 35%),
+    linear-gradient(135deg, #fff1fb, #f8c7ec, #f6e9ff);
+
+  box-shadow: 0 24px 60px rgba(90, 35, 85, 0.16);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+}
+
+.penguinCard::before {
+  content: "🐧";
+  position: absolute;
+  right: 28px;
+  bottom: 24px;
+  font-size: 120px;
+  opacity: 0.16;
+}
+
+.penguinBadge {
+  margin-bottom: 18px;
+  padding: 8px 16px;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.7);
+  color: #7b3d68;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.penguinCard h2 {
+  margin: 0;
+  max-width: 360px;
+
+  font-size: clamp(32px, 5vw, 54px);
+  line-height: 1.05;
+  color: #5a2a4f;
+  font-family: "Playfair Display", "Georgia", serif;
+}
+
+.penguinIntro {
+  margin: 20px 0 0;
+  max-width: 420px;
+
+  font-size: 17px;
+  line-height: 1.6;
+  color: #704264;
+}
+
+.penguinBtn {
+  margin-top: 28px;
+  padding: 13px 22px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #7b3d68, #c75aa5);
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+
+  box-shadow: 0 12px 28px rgba(123, 61, 104, 0.3);
+  transition: 0.25s ease;
+}
+
+.penguinBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(123, 61, 104, 0.38);
+}
+
+.penguinHiddenText {
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(10px);
+
+  color: #5a2a4f;
+  font-size: 15px;
+  line-height: 1.7;
+
+  animation: showText 0.35s ease forwards;
+}
+
+.penguinHiddenText p {
+  margin: 0;
+}
+
+@keyframes showText {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* HERO SLIDER */
@@ -745,5 +873,26 @@
 
   .giveawayBox h3 {
     font-size: 34px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 24px 16px;
+  }
+
+  .heroContent,
+  .penguinCard {
+    min-height: 440px;
+    border-radius: 26px;
+  }
+
+  .penguinCard {
+    padding: 28px 22px;
+  }
+
+  .penguinCard::before {
+    font-size: 90px;
   }
 }
