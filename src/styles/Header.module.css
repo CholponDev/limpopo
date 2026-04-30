@@ -11,7 +11,9 @@
 
 .topLine {
   width: 100%;
-  background: linear-gradient(90deg, #db6bc3, #dfa9d3, #dc78c6);
+  /* background: linear-gradient(90deg, #db6bc3, #dfa9d3, #dc78c6); */
+  background: linear-gradient(90deg, #f6b6e8, #ffeffc, #f6b6e8);
+
   padding: 7px 16px;
   text-align: center;
 }
