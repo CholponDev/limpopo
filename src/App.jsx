@@ -7,6 +7,7 @@ import AdminRoute from './components/AdminRoute';
 import AdminRegister from './pages/AdminRegister';
 import Home from './components/Home';
 import CategoryPage from './pages/CategoryPage';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
         <Route path="/admin-register" element={<AdminRegister />} />
 
       </Routes>
+       <Footer />
     </BrowserRouter>
   )
 }
