@@ -1,0 +1,166 @@
+.page {
+  min-height: 100vh;
+  padding: 32px;
+  background: linear-gradient(135deg, #fff7fd, #f7e8ff);
+  color: #3d243b;
+}
+
+.header {
+  max-width: 1280px;
+  margin: 0 auto 28px;
+}
+
+.header h1 {
+  margin: 0;
+  color: #4b1746;
+  font-size: 34px;
+}
+
+.header p {
+  margin: 8px 0 0;
+  color: #8b5c84;
+}
+
+.grid {
+  max-width: 1280px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(155, 22, 141, 0.14);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 0 20px 45px rgba(155, 22, 141, 0.1);
+}
+
+.panel h2 {
+  margin: 0 0 18px;
+  color: #5d1a57;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  border: 1px solid rgba(155, 22, 141, 0.18);
+  outline: none;
+  border-radius: 16px;
+  padding: 13px 15px;
+  font-size: 14px;
+  color: #4b1746;
+  background: #fff;
+}
+
+.form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: #c13ab4;
+  box-shadow: 0 0 0 4px rgba(193, 58, 180, 0.1);
+}
+
+.form button {
+  border: none;
+  background: linear-gradient(135deg, #9b168d, #d85ad0);
+  color: #fff;
+  padding: 13px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.list {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item {
+  border: 1px solid rgba(155, 22, 141, 0.12);
+  background: #fff;
+  border-radius: 20px;
+  padding: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.item h3 {
+  margin: 0;
+  color: #4b1746;
+  font-size: 17px;
+}
+
+.item p {
+  margin: 5px 0 0;
+  color: #8b5c84;
+  font-size: 14px;
+}
+
+.item button {
+  border: none;
+  background: #fff0f7;
+  color: #c30055;
+  padding: 9px 13px;
+  border-radius: 999px;
+  font-weight: 800;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.brandLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brandLeft img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  border-radius: 14px;
+  background: #fff7fd;
+  border: 1px solid rgba(155, 22, 141, 0.1);
+}
+
+.empty {
+  color: #8b5c84;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .page {
+    padding: 20px;
+  }
+
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .item button {
+    width: 100%;
+  }
+}

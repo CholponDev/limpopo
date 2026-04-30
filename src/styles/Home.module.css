@@ -1,0 +1,462 @@
+.home {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fff7fd 0%, #ffffff 45%, #fbf1ff 100%);
+  color: #3d243b;
+}
+
+/* HERO */
+
+.hero {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 90px 24px 70px;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 48px;
+}
+
+.heroContent {
+  max-width: 680px;
+}
+
+.label,
+.sectionHeader span,
+.brandsInfo span,
+.giveawayContent span {
+  display: inline-block;
+  margin-bottom: 16px;
+
+  color: #a31394;
+  background: rgba(211, 7, 205, 0.08);
+  border: 1px solid rgba(211, 7, 205, 0.12);
+
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.heroContent h1 {
+  margin: 0;
+
+  color: #42123d;
+  font-size: clamp(38px, 6vw, 74px);
+  line-height: 1.03;
+  letter-spacing: -2.5px;
+  font-weight: 900;
+}
+
+.heroContent p {
+  max-width: 560px;
+  margin: 22px 0 0;
+
+  color: #7d5b77;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.heroActions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 14px 22px;
+
+  font-size: 15px;
+  font-weight: 800;
+  transition: 0.25s ease;
+}
+
+.primaryBtn {
+  color: #fff;
+  background: linear-gradient(135deg, #9b168d, #d855d4);
+  box-shadow: 0 14px 30px rgba(155, 22, 141, 0.24);
+}
+
+.secondaryBtn {
+  color: #8d147f;
+  background: #fff;
+  border: 1px solid rgba(155, 22, 141, 0.16);
+}
+
+.primaryBtn:hover,
+.secondaryBtn:hover {
+  transform: translateY(-2px);
+}
+
+/* HERO CARD */
+
+.heroCard {
+  min-height: 430px;
+  border-radius: 36px;
+  padding: 28px;
+
+  background:
+    radial-gradient(circle at top right, rgba(216, 85, 212, 0.35), transparent 35%),
+    linear-gradient(135deg, #fff, #f8d8f7);
+
+  border: 1px solid rgba(155, 22, 141, 0.13);
+  box-shadow: 0 30px 70px rgba(155, 22, 141, 0.16);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardTop span {
+  color: white;
+  background: linear-gradient(135deg, #9b168d, #d855d4);
+  padding: 9px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.cardTop p {
+  margin: 0;
+  color: #87547f;
+  font-weight: 700;
+}
+
+.heroCard h3 {
+  margin: 60px 0 0;
+  color: #471442;
+  font-size: 42px;
+  line-height: 1.05;
+}
+
+.heroCard > p {
+  max-width: 360px;
+  color: #7d5b77;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.miniCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.miniCards div {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(155, 22, 141, 0.12);
+  border-radius: 22px;
+  padding: 16px;
+}
+
+.miniCards strong {
+  display: block;
+  color: #5b1853;
+  font-size: 16px;
+}
+
+.miniCards span {
+  display: block;
+  margin-top: 5px;
+  color: #9b6b94;
+  font-size: 13px;
+}
+
+/* CATEGORIES */
+
+.categories {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 50px 24px 80px;
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 38px;
+}
+
+.sectionHeader h2,
+.brandsInfo h2,
+.giveawayContent h2 {
+  margin: 0;
+  color: #42123d;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.1;
+  letter-spacing: -1.3px;
+}
+
+.sectionHeader p,
+.brandsInfo p,
+.giveawayContent p {
+  color: #7d5b77;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.categoryCard {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(155, 22, 141, 0.11);
+  border-radius: 28px;
+  padding: 22px;
+  min-height: 230px;
+
+  box-shadow: 0 18px 40px rgba(155, 22, 141, 0.08);
+  transition: 0.25s ease;
+}
+
+.categoryCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 50px rgba(155, 22, 141, 0.14);
+}
+
+.categoryNumber {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  background: linear-gradient(135deg, #9b168d, #d855d4);
+
+  font-weight: 900;
+}
+
+.categoryCard h3 {
+  margin: 22px 0 10px;
+  color: #42123d;
+  font-size: 20px;
+}
+
+.categoryCard p {
+  margin: 0;
+  color: #7d5b77;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.categoryCard button {
+  margin-top: 20px;
+  border: none;
+  background: #fff0fb;
+  color: #9b168d;
+
+  padding: 10px 15px;
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* BRANDS */
+
+.brands {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 70px 24px;
+
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 42px;
+  align-items: center;
+}
+
+.brandsInfo {
+  max-width: 460px;
+}
+
+.brandList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.brandItem {
+  background: #fff;
+  border: 1px solid rgba(155, 22, 141, 0.12);
+  border-radius: 22px;
+  padding: 18px;
+
+  color: #5b1853;
+  font-size: 17px;
+  font-weight: 850;
+  text-align: center;
+
+  box-shadow: 0 14px 28px rgba(155, 22, 141, 0.07);
+  transition: 0.25s ease;
+}
+
+.brandItem:hover {
+  transform: translateY(-3px);
+  color: #9b168d;
+}
+
+/* GIVEAWAY */
+
+.giveaway {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 30px 24px 90px;
+
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.giveawayContent {
+  background: linear-gradient(135deg, #4b1746, #9b168d);
+  border-radius: 34px;
+  padding: 40px;
+
+  color: #fff;
+  box-shadow: 0 26px 60px rgba(75, 23, 70, 0.22);
+}
+
+.giveawayContent span {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.giveawayContent h2 {
+  color: #fff;
+}
+
+.giveawayContent p {
+  max-width: 640px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.giveawayContent a {
+  display: inline-block;
+  margin-top: 20px;
+
+  color: #4b1746;
+  background: #fff;
+  text-decoration: none;
+
+  padding: 13px 20px;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.giveawayBox {
+  border-radius: 34px;
+  padding: 32px;
+
+  background:
+    radial-gradient(circle at 30% 20%, rgba(216, 85, 212, 0.35), transparent 35%),
+    #fff;
+
+  border: 1px solid rgba(155, 22, 141, 0.12);
+  box-shadow: 0 22px 45px rgba(155, 22, 141, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.giveawayBox p {
+  margin: 0;
+  color: #9b168d;
+  font-weight: 900;
+}
+
+.giveawayBox h3 {
+  margin: 14px 0;
+  color: #42123d;
+  font-size: 42px;
+  line-height: 1;
+}
+
+.giveawayBox span {
+  color: #7d5b77;
+  font-weight: 700;
+}
+
+/* ADAPTIVE */
+
+@media (max-width: 1050px) {
+  .hero,
+  .brands,
+  .giveaway {
+    grid-template-columns: 1fr;
+  }
+
+  .categoryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .heroCard {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 650px) {
+  .hero {
+    padding: 60px 18px 45px;
+  }
+
+  .categories,
+  .brands,
+  .giveaway {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .heroActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    text-align: center;
+  }
+
+  .categoryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .brandList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .miniCards {
+    grid-template-columns: 1fr;
+  }
+
+  .giveawayContent {
+    padding: 28px;
+  }
+
+  .giveawayBox h3 {
+    font-size: 34px;
+  }
+}
