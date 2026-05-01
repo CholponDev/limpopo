@@ -1,25 +1,37 @@
-import './App.css'
-import Header from './components/Header'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import AdminLogin from './pages/AdminLogin';
-import AdminProducts from './pages/AdminProducts';
-import AdminRoute from './components/AdminRoute';
-import AdminRegister from './pages/AdminRegister';
-import Home from './components/Home';
-import CategoryPage from './pages/CategoryPage';
-import Footer from './components/Footer';
+import "./App.css";
+
+import { Routes, Route } from "react-router-dom";
+
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+import Home from "./components/Home";
+import CategoryPage from "./pages/CategoryPage";
+
+import AdminLogin from "./pages/AdminLogin";
+import AdminProducts from "./pages/AdminProducts";
+import AdminRegister from "./pages/AdminRegister";
+import AdminRoute from "./components/AdminRoute";
+
+import RegisterClient from "./pages/RegisterClient";
+import LoginClient from "./pages/LoginClient";
+import OrderPage from "./pages/OrderPage";
+import ProtectedRoute from "./routes/ProtectedRoute";
 
 function App() {
-
   return (
-    <BrowserRouter>
-      <Header/>
-      <Routes>
-        <Route path='/' element={< Home/>}/>
-        <Route path="admin-login" element={< AdminLogin/>} />
-        <Route path='/category/:categoryId' element={< CategoryPage/>}/>
+    <>
+      <Header />
 
-          <Route
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        <Route path="/category/:categoryId" element={<CategoryPage />} />
+
+        <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/admin-register" element={<AdminRegister />} />
+
+        <Route
           path="/admin"
           element={
             <AdminRoute>
@@ -28,21 +40,22 @@ function App() {
           }
         />
 
+        <Route path="/register" element={<RegisterClient />} />
+        <Route path="/login" element={<LoginClient />} />
+
         <Route
-          path="/"
+          path="/order/:productId"
           element={
-            <div style={{ padding: "40px" }}>
-              <h1>Limpopo Karakol</h1>
-            </div>
+            <ProtectedRoute>
+              <OrderPage />
+            </ProtectedRoute>
           }
         />
-
-        <Route path="/admin-register" element={<AdminRegister />} />
-
       </Routes>
-       <Footer />
-    </BrowserRouter>
-  )
+
+      <Footer />
+    </>
+  );
 }
 
-export default App
+export default App;

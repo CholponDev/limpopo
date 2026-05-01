@@ -1,0 +1,144 @@
+.orderPage {
+  min-height: 100vh;
+  padding: 70px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(circle at 10% 8%, rgba(216, 85, 212, 0.14), transparent 28%),
+    radial-gradient(circle at 90% 38%, rgba(117, 96, 167, 0.12), transparent 30%),
+    linear-gradient(180deg, #fff7fd 0%, #ffffff 42%, #fbf1ff 100%);
+}
+
+.orderCard {
+  width: 100%;
+  max-width: 540px;
+
+  padding: 34px;
+  border-radius: 32px;
+
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(155, 22, 141, 0.13);
+  box-shadow: 0 24px 60px rgba(155, 22, 141, 0.12);
+  backdrop-filter: blur(14px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.backLink {
+  width: fit-content;
+  color: #9b168d;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.orderCard span {
+  width: fit-content;
+
+  color: #9b168d;
+  background: #fff0fb;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.orderCard h1 {
+  margin: 0;
+  color: #42123d;
+  font-size: 32px;
+}
+
+.productImg {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.price {
+  margin: 0;
+  color: #9b168d;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.orderCard input,
+.orderCard textarea {
+  width: 100%;
+  border: 1px solid rgba(155, 22, 141, 0.14);
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.82);
+  color: #42123d;
+
+  padding: 14px 16px;
+  border-radius: 18px;
+
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.orderCard textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.orderCard input:focus,
+.orderCard textarea:focus {
+  border-color: rgba(155, 22, 141, 0.35);
+  box-shadow: 0 0 0 4px rgba(155, 22, 141, 0.08);
+}
+
+.orderCard button {
+  border: none;
+  margin-top: 8px;
+
+  color: #fff;
+  background: linear-gradient(135deg, #9b168d, #d855d4);
+
+  padding: 14px 18px;
+  border-radius: 999px;
+
+  font-size: 15px;
+  font-weight: 900;
+  cursor: pointer;
+
+  box-shadow: 0 14px 30px rgba(155, 22, 141, 0.22);
+  transition: 0.25s ease;
+}
+
+.orderCard button:hover {
+  transform: translateY(-2px);
+}
+
+.orderCard button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #b00020;
+  background: rgba(255, 0, 60, 0.08);
+  border: 1px solid rgba(255, 0, 60, 0.14);
+
+  padding: 12px 14px;
+  border-radius: 16px;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.loading {
+  padding: 40px;
+  color: #7d5b77;
+  font-size: 18px;
+  font-weight: 700;
+}

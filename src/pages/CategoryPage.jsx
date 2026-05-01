@@ -112,6 +112,9 @@ function CategoryPage() {
 
                   {product.oldPrice && <span>{product.oldPrice} сом</span>}
                 </div>
+                <Link to={`/order/${product.id}`} className={style.orderBtn}>
+                  Заказать
+                </Link>
               </div>
             </article>
           ))}
