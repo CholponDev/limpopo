@@ -127,68 +127,46 @@ function Home() {
 
   return (
     <main className={style.home} id="home">
-      <section className={style.hero}>
+     <section className={style.hero}>
   <div
     className={style.heroContent}
     style={
       heroSlides[0]?.image
         ? {
             backgroundImage: `linear-gradient(
-              rgba(45, 12, 48, 0.45),
-              rgba(45, 12, 48, 0.55)
+              rgba(45, 12, 48, 0.55),
+              rgba(45, 12, 48, 0.65)
             ), url(${heroSlides[0].image})`,
           }
         : undefined
     }
   >
-    <div className={style.heroTextBox}>
-      <span className={style.label}>Limpopo Karakol</span>
+    <span className={style.label}>Limpopo Karakol</span>
 
-      <h1 className={style.heroTitle}>Limpopo</h1>
+    <h1 className={style.heroTitle}>
+      Limpopo
+      <span>Karakol</span>
+    </h1>
 
-      <p className={style.heroSlogan}>
-        Здесь начинается ваш любимый уход
-      </p>
+    <p className={style.heroSlogan}>Магазин красоты</p>
 
-      <div className={style.heroActions}>
-        <a href="#products" className={style.primaryBtn}>
-          Смотреть товары
-        </a>
-
-        <a href="#brands" className={style.secondaryBtn}>
-          Наши бренды
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div className={style.penguinCard}>
-    <div className={style.penguinBadge}>Limpopo choice</div>
-
-    <h2>Пингвин выбрал Limpopo</h2>
-
-    <p className={style.penguinIntro}>
-      Даже самый милый пингвин знает, где начинается любимый уход.
+    <p className={style.heroInfo}>
+      16 лет • 1000+ довольных клиентов
     </p>
 
-    <button
-      type="button"
-      className={style.penguinBtn}
-      onClick={() => setShowPenguinText(!showPenguinText)}
-    >
-      {showPenguinText ? "Скрыть историю" : "Открыть историю"}
-    </button>
+    <p className={style.heroCategories}>
+      Корейская косметика · Парфюмы · Дом
+    </p>
 
-    {showPenguinText && (
-      <div className={style.penguinHiddenText}>
-        <p>
-          Пингвин долго искал место, где можно найти всё для красоты:
-          уход для лица, тела, волос, косметику, ароматы и уютные товары
-          для дома. И однажды он выбрал Limpopo — потому что здесь уход
-          становится любимым ритуалом.
-        </p>
-      </div>
-    )}
+    <div className={style.heroActions}>
+      <a href="#products" className={style.primaryBtn}>
+        Смотреть товары
+      </a>
+
+      <a href="#brands" className={style.secondaryBtn}>
+        Наши бренды
+      </a>
+    </div>
   </div>
 </section>
 

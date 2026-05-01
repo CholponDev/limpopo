@@ -1,87 +1,105 @@
 .footer {
-  background: #ffffff;
-  border-top: 1px solid #eee;
-  padding: 40px 20px 20px;
-  font-family: Arial, sans-serif;
-}
+  background:
+    radial-gradient(circle at 20% 0%, rgba(216, 85, 212, 0.12), transparent 35%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.35), rgba(251, 241, 255, 0.92));
 
-/* основной фиолетовый цвет */
-:root {
-  --purple: #7560a7; /* более мягкий современный фиолетовый */
+  border-top: 1px solid var(--border-soft);
+  padding: 50px 20px 22px;
+  font-family: Arial, sans-serif;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 24px;
 }
 
 .block {
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  padding: 24px;
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(14px);
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: var(--purple);
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--purple-main);
 }
 
 .title {
   font-size: 18px;
-  font-weight: 600;
-  color: #333;
+  font-weight: 800;
+  color: var(--purple-dark);
 }
 
 .text {
   font-size: 14px;
-  color: #666;
-  line-height: 1.5;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 
-/* Соцсети */
 .socials {
   display: flex;
-  gap: 15px;
+  gap: 12px;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 
 .icon {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: var(--purple);
+
+  color: var(--purple-main);
+  background: rgba(255, 240, 251, 0.9);
+
+  padding: 9px 13px;
+  border-radius: var(--radius-pill);
+
   text-decoration: none;
   font-size: 14px;
-  transition: 0.3s;
+  font-weight: 700;
+
+  transition: 0.25s ease;
 }
 
 .icon:hover {
-  opacity: 0.7;
+  transform: translateY(-2px);
+  background: #ffffff;
+  box-shadow: 0 10px 22px rgba(155, 22, 141, 0.12);
 }
 
-/* Карта */
 .map {
   width: 100%;
   height: 180px;
   border: none;
-  border-radius: 12px;
+  border-radius: 20px;
+  box-shadow: 0 12px 26px rgba(155, 22, 141, 0.1);
 }
 
-/* Нижняя часть */
 .bottom {
-  margin-top: 30px;
+  max-width: 1200px;
+  margin: 28px auto 0;
+  padding-top: 18px;
+
   text-align: center;
   font-size: 13px;
-  color: #999;
-  border-top: 1px solid #eee;
-  padding-top: 15px;
+  color: #9b7d95;
+
+  border-top: 1px solid var(--border-soft);
 }
 
-/* АДАПТИВ */
 @media (max-width: 900px) {
   .container {
     grid-template-columns: 1fr;
