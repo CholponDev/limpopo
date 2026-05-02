@@ -223,6 +223,123 @@ option {
   font-weight: 600;
 }
 
+.logoBox {
+  text-decoration: none;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.authButtons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.loginBtn,
+.registerBtn,
+.logoutBtn {
+  border: none;
+  text-decoration: none;
+
+  padding: 11px 18px;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.loginBtn {
+  color: #9b168d;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(155, 22, 141, 0.14);
+}
+
+.registerBtn {
+  color: #ffffff;
+  background: linear-gradient(135deg, #9b168d, #d855d4);
+  box-shadow: 0 10px 24px rgba(155, 22, 141, 0.18);
+}
+
+.logoutBtn {
+  color: #ffffff;
+  background: linear-gradient(135deg, #4b1746, #9b168d);
+}
+
+.loginBtn:hover,
+.registerBtn:hover,
+.logoutBtn:hover {
+  transform: translateY(-2px);
+}
+
+.userBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 6px;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(155, 22, 141, 0.13);
+}
+
+.userEmail {
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  padding-left: 10px;
+
+  color: #6d2a68;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+@media (max-width: 1100px) {
+  .actions {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .authButtons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .authButtons,
+  .userBox {
+    width: 100%;
+    flex-direction: column;
+    border-radius: 22px;
+  }
+
+  .loginBtn,
+  .registerBtn,
+  .logoutBtn,
+  .instaBtn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .userEmail {
+    max-width: 100%;
+    padding-left: 0;
+  }
+}
+
 @media (max-width: 1100px) {
   .container {
     flex-wrap: wrap;

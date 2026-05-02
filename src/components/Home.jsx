@@ -1,5 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import style from "../styles/Home.module.css";
+import img from "../assets/lim.png";
+
 import { Link } from "react-router-dom";
 
 import { collection, onSnapshot } from "firebase/firestore";
@@ -125,7 +127,7 @@ function Home() {
     <main className={style.home} id="home">
       <section className={style.hero}>
         <div className={style.heroContent}>
-          <span className={style.label}>Limpopo Karakol</span>
+          {/* <span className={style.label}>Limpopo Karakol</span> */}
 
           <h1 className={style.heroTitle}>
             Limpopo
@@ -151,7 +153,11 @@ function Home() {
               Наши бренды
             </a>
           </div>
+            <div className={style.heroImageBox}>
+             <img className={style.image} src={img} alt="" />
+            </div>
         </div>
+
       </section>
 
       <section className={style.categories} id="categories">
