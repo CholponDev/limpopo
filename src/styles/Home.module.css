@@ -20,21 +20,21 @@
 }
 
 .heroContent {
-  min-height: 620px;
+  min-height: 650px;
   border-radius: 38px;
-  padding: 70px 58px;
+  padding: 60px;
 
   display: grid;
-  grid-template-columns: 1fr 0.9fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 46px;
+  gap: 50px;
 
   position: relative;
   overflow: hidden;
 
   background:
-    radial-gradient(circle at 15% 20%, rgba(255, 220, 248, 0.42), transparent 34%),
-    radial-gradient(circle at 85% 70%, rgba(216, 85, 212, 0.24), transparent 36%),
+    radial-gradient(circle at 15% 20%, rgba(255, 220, 248, 0.4), transparent 34%),
+    radial-gradient(circle at 85% 70%, rgba(216, 85, 212, 0.22), transparent 36%),
     linear-gradient(135deg, #6d2a68, #9b168d 45%, #d855d4);
 
   border: 1px solid rgba(255, 255, 255, 0.28);
@@ -71,9 +71,70 @@
   position: relative;
   z-index: 2;
 
-  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  max-width: 560px;
   text-align: left;
   color: #ffffff;
+}
+
+.heroTitle {
+  margin: 0;
+
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(74px, 9vw, 135px);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -4px;
+
+  color: #ffffff;
+  text-shadow: 0 22px 55px rgba(0, 0, 0, 0.35);
+}
+
+.heroTitle span {
+  display: block;
+  margin-top: 12px;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: clamp(24px, 3.5vw, 44px);
+  font-weight: 600;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+}
+
+.heroSlogan {
+  margin: 36px 0 0;
+
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 900;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.heroInfo {
+  margin: 18px 0 0;
+
+  font-size: clamp(17px, 2vw, 23px);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.heroCategories {
+  margin: 12px 0 0;
+
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.heroActions {
+  display: flex;
+  gap: 16px;
+  margin-top: 38px;
+  flex-wrap: wrap;
 }
 
 .label {
@@ -113,59 +174,6 @@
   letter-spacing: 0.5px;
 }
 
-.heroTitle {
-  margin: 0;
-
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(64px, 10vw, 132px);
-  font-weight: 900;
-  line-height: 0.9;
-  letter-spacing: -4px;
-
-  color: #ffffff;
-  text-shadow: 0 20px 55px rgba(0, 0, 0, 0.38);
-}
-
-.heroTitle span {
-  display: block;
-  margin-top: 12px;
-
-  font-family: "Inter", Arial, sans-serif;
-  font-size: clamp(22px, 4vw, 44px);
-  font-weight: 600;
-  letter-spacing: 12px;
-  text-transform: uppercase;
-}
-
-.heroSlogan {
-  margin: 34px 0 0;
-  font-size: clamp(24px, 4vw, 42px);
-  font-weight: 800;
-  line-height: 1.15;
-  color: #ffffff;
-}
-
-.heroInfo {
-  margin: 16px 0 0;
-  font-size: clamp(16px, 2vw, 22px);
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.92);
-}
-
-.heroCategories {
-  margin: 12px 0 0;
-  font-size: clamp(15px, 2vw, 20px);
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.84);
-}
-
-.heroActions {
-  display: flex;
-  gap: 16px;
-  margin-top: 38px;
-  flex-wrap: wrap;
-}
-
 .primaryBtn,
 .secondaryBtn {
   min-width: 180px;
@@ -191,7 +199,6 @@
 }
 
 
-
 .secondaryBtn {
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.42);
@@ -208,6 +215,7 @@
   position: relative;
   z-index: 2;
 
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -215,17 +223,17 @@
 
 .image {
   width: 100%;
-  max-width: 300px;
-  height: 300px;
+  max-width: 560px;
+  height: 560px;
 
   object-fit: cover;
   object-position: center;
 
-  border-radius: 34px;
+  border-radius: 36px;
   border: 1px solid rgba(255, 255, 255, 0.34);
 
   box-shadow:
-    0 28px 70px rgba(45, 12, 48, 0.35),
+    0 30px 75px rgba(45, 12, 48, 0.35),
     0 0 0 12px rgba(255, 255, 255, 0.1);
 }
 
@@ -663,6 +671,8 @@
   backdrop-filter: blur(14px);
 }
 
+/* Адаптивка */
+
 @media (max-width: 1050px) {
   .brands,
   .giveaway {
@@ -672,6 +682,78 @@
   .categoryGrid,
   .productsGrid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .heroContent {
+    grid-template-columns: 1fr;
+    padding: 50px 28px;
+    gap: 36px;
+  }
+
+  .heroTextBox {
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .heroActions {
+    justify-content: center;
+  }
+
+  .image {
+    max-width: 460px;
+    height: 460px;
+  } 
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 14px;
+  }
+
+  .heroContent {
+    min-height: auto;
+    border-radius: 28px;
+    padding: 42px 18px;
+  }
+
+  .heroTitle {
+    font-size: 68px;
+    letter-spacing: -3px;
+  }
+
+  .heroTitle span {
+    font-size: 24px;
+    letter-spacing: 7px;
+  }
+
+  .heroSlogan {
+    font-size: 26px;
+  }
+
+   .heroActions {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+   .primaryBtn,
+  .secondaryBtn {
+    width: auto;
+    min-width: 150px;
+    padding: 11px 18px;
+
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .image {
+    width: 100%;
+    height: 360px;
+    border-radius: 26px;
   }
 }
 

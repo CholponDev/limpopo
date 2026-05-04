@@ -125,40 +125,40 @@ function Home() {
 
   return (
     <main className={style.home} id="home">
-      <section className={style.hero}>
-        <div className={style.heroContent}>
-          {/* <span className={style.label}>Limpopo Karakol</span> */}
+     <section className={style.hero}>
+  <div className={style.heroContent}>
+    <div className={style.heroTextBox}>
+      <h1 className={style.heroTitle}>
+        Limpopo
+        <span>Karakol</span>
+      </h1>
 
-          <h1 className={style.heroTitle}>
-            Limpopo
-            <span>Karakol</span>
-          </h1>
+      <p className={style.heroSlogan}>Магазин красоты</p>
 
-          <p className={style.heroSlogan}>Магазин красоты</p>
+      <p className={style.heroInfo}>
+        16 лет • 1000+ довольных клиентов
+      </p>
 
-          <p className={style.heroInfo}>
-            16 лет • 1000+ довольных клиентов
-          </p>
+      <p className={style.heroCategories}>
+        Корейская косметика · Парфюмы · Дом
+      </p>
 
-          <p className={style.heroCategories}>
-            Корейская косметика · Парфюмы · Дом
-          </p>
+      <div className={style.heroActions}>
+        <a href="#products" className={style.primaryBtn}>
+          Смотреть товары
+        </a>
 
-          <div className={style.heroActions}>
-            <a href="#products" className={style.primaryBtn}>
-              Смотреть товары
-            </a>
+        <a href="#brands" className={style.secondaryBtn}>
+          Наши бренды
+        </a>
+      </div>
+    </div>
 
-            <a href="#brands" className={style.secondaryBtn}>
-              Наши бренды
-            </a>
-          </div>
-            <div className={style.heroImageBox}>
-             <img className={style.image} src={img} alt="" />
-            </div>
-        </div>
-
-      </section>
+    <div className={style.heroImageBox}>
+      <img className={style.image} src={img} alt="Limpopo Karakol" />
+    </div>
+  </div>
+</section>
 
       <section className={style.categories} id="categories">
         <div className={style.sectionHeader}>
