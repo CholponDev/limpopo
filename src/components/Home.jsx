@@ -175,17 +175,27 @@ function Home() {
         <div className={style.categoryGrid}>
           {categories.map((category, index) => (
             <article className={style.categoryCard} key={category.id}>
-              <div className={style.categoryNumber}>{index + 1}</div>
+  <div className={style.categoryTop}>
+    <div className={style.categoryPhoto}>
+      {category.imageUrl ? (
+        <img src={category.imageUrl} alt={category.title} />
+      ) : (
+        <span>{category.title?.charAt(0)}</span>
+      )}
+    </div>
 
-              <h3>{category.title}</h3>
+    <div className={style.categoryTitleBox}>
+      <h3>{category.title}</h3>
+    </div>
+  </div>
 
-              <p>
-                {category.description ||
-                  "Товары этой категории можно добавить через админ-панель."}
-              </p>
+  <p>
+    {category.description ||
+      "Товары этой категории можно добавить через админ-панель."}
+  </p>
 
-              <Link to={`/category/${category.id}`}>Смотреть товары</Link>
-            </article>
+  <Link to={`/category/${category.id}`}>Смотреть товары</Link>
+</article>
           ))}
 
           {categories.length === 0 && (

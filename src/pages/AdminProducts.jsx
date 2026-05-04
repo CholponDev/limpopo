@@ -63,6 +63,7 @@ const [productEditForm, setProductEditForm] = useState({
   const [categoryForm, setCategoryForm] = useState({
     title: "",
     description: "",
+    imageUrl: "",
   });
 
   const [editingBrandId, setEditingBrandId] = useState(null);
@@ -444,6 +445,7 @@ const handleSaveProduct = async (id) => {
       await addDoc(collection(db, "categories"), {
         title: categoryForm.title.trim(),
         description: categoryForm.description.trim(),
+        imageUrl: categoryForm.imageUrl.trim(),
         slug: createSlug(categoryForm.title),
         createdAt: serverTimestamp(),
       });
@@ -451,6 +453,7 @@ const handleSaveProduct = async (id) => {
       setCategoryForm({
         title: "",
         description: "",
+        imageUrl: "",
       });
     } catch (error) {
       console.error("Ошибка добавления категории:", error);
@@ -464,7 +467,8 @@ const handleSaveProduct = async (id) => {
     setCategoryEditForm({
       title: category.title || "",
       description: category.description || "",
-    });
+      imageUrl: category.imageUrl || "",
+     });
   };
 
   const cancelEditCategory = () => {
@@ -473,6 +477,7 @@ const handleSaveProduct = async (id) => {
     setCategoryEditForm({
       title: "",
       description: "",
+      imageUrl: "",
     });
   };
 
@@ -486,6 +491,7 @@ const handleSaveProduct = async (id) => {
       await updateDoc(doc(db, "categories", id), {
         title: categoryEditForm.title.trim(),
         description: categoryEditForm.description.trim(),
+        imageUrl: categoryEditForm.imageUrl.trim(),
         slug: createSlug(categoryEditForm.title),
         updatedAt: serverTimestamp(),
       });
@@ -1016,6 +1022,18 @@ const handleSaveProduct = async (id) => {
               }
             />
 
+            <input
+              type="text"
+              placeholder="Ссылка на фото категории"
+              value={categoryForm.imageUrl}
+             onChange={(e) =>
+               setCategoryForm({
+                 ...categoryForm,
+                  imageUrl: e.target.value,
+          })
+         }
+        />
+
             <textarea
               placeholder="Описание категории"
               value={categoryForm.description}
@@ -1046,6 +1064,18 @@ const handleSaveProduct = async (id) => {
                       }
                     />
 
+                    <input
+                     type="text"
+                     value={categoryEditForm.imageUrl}
+                     placeholder="Ссылка на фото категории"
+                     onChange={(e) =>
+                       setCategoryEditForm({
+                         ...categoryEditForm,
+                         imageUrl: e.target.value,
+                       })
+                      }
+                    />
+ 
                     <textarea
                       value={categoryEditForm.description}
                       onChange={(e) =>
@@ -1071,10 +1101,20 @@ const handleSaveProduct = async (id) => {
                   </div>
                 ) : (
                   <>
-                    <div>
-                      <h3>{category.title}</h3>
-                      <p>{category.description}</p>
-                    </div>
+                    <div className={style.categoryMini}>
+  <div className={style.categoryMiniPhoto}>
+    {category.imageUrl ? (
+      <img src={category.imageUrl} alt={category.title} />
+    ) : (
+      <span>{category.title?.charAt(0)}</span>
+    )}
+  </div>
+
+  <div>
+    <h3>{category.title}</h3>
+    <p>{category.description}</p>
+  </div>
+</div>
 
                     <div className={style.itemActions}>
                       <button

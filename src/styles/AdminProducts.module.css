@@ -645,6 +645,38 @@
   font-size: 14px;
 }
 
+.categoryMini {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.categoryMiniPhoto {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+
+  flex-shrink: 0;
+  overflow: hidden;
+
+  background: linear-gradient(135deg, #fff0fb, #f3defa);
+  border: 1px solid rgba(155, 22, 141, 0.13);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #9b168d;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.categoryMiniPhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 @media (max-width: 950px) {
   .catalogBlock {
     grid-template-columns: 1fr;
