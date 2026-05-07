@@ -6,22 +6,7 @@ import { Link } from "react-router-dom";
 
 import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase/firebase";
-const categoryImages = {
-  "для лица":
-    "https://i.pinimg.com/736x/e4/07/fa/e407fa0a9013804d87bfa25ec67b8bfc.jpg",
-  "для тела":
-    "https://i.pinimg.com/736x/92/e8/4b/92e84b879c064bf8fc7439b74d75a4fd.jpg",
-  "для волос":
-    "https://i.pinimg.com/1200x/52/9d/ce/529dcef9fb09292f0de374c9a2e9b9e7.jpg",
-  "декоративная косметика":
-    "https://i.pinimg.com/736x/61/04/db/6104db756638cc715acd0faf9f5cd756.jpg",
-  "сумки и косметички":
-    "https://i.pinimg.com/736x/85/94/ec/8594ec02d6019751c42066f6b9514fad.jpg",
-  "парфюмерия":
-    "https://i.pinimg.com/736x/27/db/ce/27dbce8e2e0d7863fdcac773a18b776e.jpg",
-  "подарочные наборы":
-    "https://i.pinimg.com/1200x/0d/83/8c/0d838c09fed26177547935a054bdaa19.jpg"
-};
+
 function Home() {
   const [categories, setCategories] = useState([]);
   const [brands, setBrands] = useState([]);
@@ -185,13 +170,11 @@ function Home() {
               key={cat.id}
               className={style.categoryCard}
             >
-              <img
-                src={
-                  categoryImages[cat.title?.toLowerCase()] || cat.imageUrl
-                }
-                alt={cat.title}
-                className={style.categoryImage}
-              />
+             <img
+  src={cat.imageUrl}
+  alt={cat.title}
+  className={style.categoryImage}
+/>
 
               <p className={style.categoryTitle}>{cat.title}</p>
             </Link>
