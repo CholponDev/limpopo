@@ -6,7 +6,22 @@ import { Link } from "react-router-dom";
 
 import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase/firebase";
-
+const categoryImages = {
+  "для лица":
+    "https://i.pinimg.com/736x/e4/07/fa/e407fa0a9013804d87bfa25ec67b8bfc.jpg",
+  "для тела":
+    "https://i.pinimg.com/736x/92/e8/4b/92e84b879c064bf8fc7439b74d75a4fd.jpg",
+  "для волос":
+    "https://i.pinimg.com/1200x/52/9d/ce/529dcef9fb09292f0de374c9a2e9b9e7.jpg",
+  "декоративная косметика":
+    "https://i.pinimg.com/736x/61/04/db/6104db756638cc715acd0faf9f5cd756.jpg",
+  "сумки и косметички":
+    "https://i.pinimg.com/736x/85/94/ec/8594ec02d6019751c42066f6b9514fad.jpg",
+  "парфюмерия":
+    "https://i.pinimg.com/736x/27/db/ce/27dbce8e2e0d7863fdcac773a18b776e.jpg",
+  "подарочные наборы":
+    "https://i.pinimg.com/1200x/0d/83/8c/0d838c09fed26177547935a054bdaa19.jpg"
+};
 function Home() {
   const [categories, setCategories] = useState([]);
   const [brands, setBrands] = useState([]);
@@ -159,52 +174,30 @@ function Home() {
     </div>
   </div>
 </section>
+ <div className={style.categoriesWrapper}>
+        <h2>Категории магазина</h2>
+        
 
-      <section className={style.categories} id="categories">
-        <div className={style.sectionHeader}>
-          <span>Категории</span>
+        <div className={style.categoriesSlider}>
+          {categories.map((cat) => (
+            <Link
+              to={`/category/${cat.id}`}
+              key={cat.id}
+              className={style.categoryCard}
+            >
+              <img
+                src={
+                  categoryImages[cat.title?.toLowerCase()] || cat.imageUrl
+                }
+                alt={cat.title}
+                className={style.categoryImage}
+              />
 
-          <h2>Подберите товары по направлению</h2>
-
-          <p>
-            Выберите своё средство для заботы и уверенности. У нас есть уходы,
-            которые подчёркивают вашу естественную красоту.
-          </p>
-        </div>
-
-        <div className={style.categoryGrid}>
-          {categories.map((category, index) => (
-            <article className={style.categoryCard} key={category.id}>
-  <div className={style.categoryTop}>
-    <div className={style.categoryPhoto}>
-      {category.imageUrl ? (
-        <img src={category.imageUrl} alt={category.title} />
-      ) : (
-        <span>{category.title?.charAt(0)}</span>
-      )}
-    </div>
-
-    <div className={style.categoryTitleBox}>
-      <h3>{category.title}</h3>
-    </div>
-  </div>
-
-  <p>
-    {category.description ||
-      "Товары этой категории можно добавить через админ-панель."}
-  </p>
-
-  <Link to={`/category/${category.id}`}>Смотреть товары</Link>
-</article>
+              <p className={style.categoryTitle}>{cat.title}</p>
+            </Link>
           ))}
-
-          {categories.length === 0 && (
-            <p className={style.empty}>
-              Категорий пока нет. Добавьте их в админ-панели.
-            </p>
-          )}
         </div>
-      </section>
+      </div>
 
       <section className={style.productsSection} id="products">
         <div className={style.sectionHeader}>
