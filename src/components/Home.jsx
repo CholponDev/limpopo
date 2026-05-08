@@ -201,7 +201,7 @@ function Home() {
 
       <section className={style.productsSection} id="products">
         <div className={style.sectionHeader}>
-          <span>Товары</span>
+          {/* <span>Товары</span> */}
 
           <h2 id="popular">Популярные товары</h2>
 
@@ -222,7 +222,7 @@ function Home() {
       {newProducts.length > 0 && (
         <section className={style.productsSection} id="new">
           <div className={style.sectionHeader}>
-            <span>Новинки</span>
+            {/* <span>Новинки</span> */}
 
             <h2>Новые поступления</h2>
 
@@ -238,7 +238,7 @@ function Home() {
       {discountProducts.length > 0 && (
         <section className={style.productsSection} id="discount">
           <div className={style.sectionHeader}>
-            <span>Скидки</span>
+            {/* <span>Скидки</span> */}
 
             <h2>Скидочные товары</h2>
 
