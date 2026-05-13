@@ -8,7 +8,7 @@ import { AuthProvider } from "./context/AuthContext";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/limpopo">
     <AuthProvider>
       <App />
     </AuthProvider>
