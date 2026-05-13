@@ -11,33 +11,31 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
 }
 
-.block {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.content {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 28px;
 
-  padding: 24px;
-  border-radius: 28px;
+  padding: 28px;
+  border-radius: 30px;
 
-  background: rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.68);
   border: 1px solid var(--border-soft);
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(14px);
 }
 
-.logo {
-  font-size: 26px;
-  font-weight: 900;
-  color: var(--purple-main);
+.contacts,
+.mapBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .title {
+  margin: 0 0 4px;
   font-size: 18px;
   font-weight: 800;
   color: var(--purple-dark);
@@ -83,9 +81,9 @@
 
 .map {
   width: 100%;
-  height: 180px;
+  height: 220px;
   border: none;
-  border-radius: 20px;
+  border-radius: 22px;
   box-shadow: 0 12px 26px rgba(155, 22, 141, 0.1);
 }
 
@@ -107,14 +105,11 @@
     padding: 36px 14px 18px;
   }
 
-  .container {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
-  }
-
-  .block {
-    padding: 18px;
-    border-radius: 22px;
+  .content {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    padding: 20px;
+    border-radius: 24px;
   }
 
   .title {
@@ -132,8 +127,8 @@
   }
 
   .map {
-    height: 150px;
-    border-radius: 16px;
+    height: 170px;
+    border-radius: 18px;
   }
 
   .bottom {
@@ -142,50 +137,46 @@
   }
 }
 
-/* Маленький экран: карточки остаются в один ряд */
+/* Телефон */
 @media (max-width: 600px) {
   .footer {
     padding: 28px 10px 16px;
   }
 
-  .container {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-  }
-
-  .block {
-    padding: 12px;
-    border-radius: 18px;
-    gap: 7px;
+  .content {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 16px;
+    border-radius: 20px;
   }
 
   .title {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .text {
-    font-size: 11.5px;
-    line-height: 1.35;
+    font-size: 12.5px;
+    line-height: 1.4;
   }
 
   .socials {
-    gap: 6px;
-    margin-top: 6px;
+    gap: 8px;
+    margin-top: 8px;
   }
 
   .icon {
-    padding: 7px 8px;
-    font-size: 11.5px;
-    gap: 4px;
+    padding: 8px 10px;
+    font-size: 12px;
+    gap: 5px;
   }
 
   .icon svg {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .map {
-    height: 120px;
-    border-radius: 14px;
+    height: 160px;
+    border-radius: 16px;
   }
 
   .bottom {
@@ -197,29 +188,25 @@
 
 /* Очень маленький экран */
 @media (max-width: 420px) {
-  .container {
-    gap: 8px;
-  }
-
-  .block {
-    padding: 10px;
-    border-radius: 16px;
+  .content {
+    padding: 13px;
+    border-radius: 18px;
   }
 
   .title {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .text {
-    font-size: 10.5px;
+    font-size: 11.5px;
   }
 
   .icon {
-    padding: 6px 7px;
-    font-size: 10.5px;
+    padding: 7px 9px;
+    font-size: 11.5px;
   }
 
   .map {
-    height: 105px;
+    height: 140px;
   }
 }

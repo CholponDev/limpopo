@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import style from "../styles/Home.module.css";
 import img from "../assets/lim.png";
+import ins from '../assets/instagram.png'
 
 import { Link } from "react-router-dom";
 
@@ -24,6 +25,7 @@ function Home() {
     const unsubscribeCategories = onSnapshot(
       collection(db, "categories"),
       (snapshot) => {
+
         const data = snapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
@@ -103,12 +105,6 @@ function Home() {
         <div className={style.productInfo}>
           <h3>{product.title}</h3>
 
-          {product.brandTitle && <p>Бренд: {product.brandTitle}</p>}
-
-          {product.categoryTitle && (
-            <p>Категория: {product.categoryTitle}</p>
-          )}
-
           <div className={style.priceBox}>
             <strong>{product.price} сом</strong>
 
@@ -125,43 +121,45 @@ function Home() {
 
   return (
     <main className={style.home} id="home">
-     <section className={style.hero}>
-  <div className={style.heroContent}>
-    <div className={style.heroTextBox}>
-      <h1 className={style.heroTitle}>
-        Limpopo
-        <span>Karakol</span>
-      </h1>
+      <section className={style.hero}>
+        <div className={style.heroContent}>
+          
+          <div className={style.heroTextBox}>
+            <h1 className={style.heroTitle}>
+              Limpopo
+              <span>Karakol</span>
+            </h1>
 
-      <p className={style.heroSlogan}>Магазин красоты</p>
+            <p className={style.heroSlogan}>Магазин красоты</p>
 
-      <p className={style.heroInfo}>
-        16 лет • 1000+ довольных клиентов
-      </p>
+            <p className={style.heroInfo}>
+              16 лет • 1000+ довольных клиентов
+            </p>
 
-      <p className={style.heroCategories}>
-        Корейская косметика · Парфюмы · Дом
-      </p>
+            <p className={style.heroCategories}>
+              Корейская косметика · Парфюмы · Дом
+            </p>
 
-      <div className={style.heroActions}>
-        <a href="#products" className={style.primaryBtn}>
-          Смотреть товары
-        </a>
+            <div className={style.heroActions}>
+              <a href="#products" className={style.primaryBtn}>
+                Смотреть товары
+              </a>
 
-        <a href="#brands" className={style.secondaryBtn}>
-          Наши бренды
-        </a>
-      </div>
-    </div>
+              <a href="#brands" className={style.secondaryBtn}>
+                Наши бренды
+              </a>
+            </div>
+          </div>
+           <div className={style.heroImageBox}>
+            <img className={style.image} src={img} alt="Limpopo Karakol" />
+          </div>
 
-    <div className={style.heroImageBox}>
-      <img className={style.image} src={img} alt="Limpopo Karakol" />
-    </div>
-  </div>
-</section>
- <div className={style.categoriesWrapper}>
+         
+        </div>
+      </section>
+
+      <div className={style.categoriesWrapper}>
         <h2>Категории магазина</h2>
-        
 
         <div className={style.categoriesSlider}>
           {categories.map((cat) => (
@@ -170,11 +168,17 @@ function Home() {
               key={cat.id}
               className={style.categoryCard}
             >
-             <img
-  src={cat.imageUrl}
-  alt={cat.title}
-  className={style.categoryImage}
-/>
+              {cat.imageUrl ? (
+                <img
+                  src={cat.imageUrl}
+                  alt={cat.title}
+                  className={style.categoryImage}
+                />
+              ) : (
+                <div className={style.categoryImagePlaceholder}>
+                  {cat.title?.charAt(0)}
+                </div>
+              )}
 
               <p className={style.categoryTitle}>{cat.title}</p>
             </Link>
@@ -184,8 +188,6 @@ function Home() {
 
       <section className={style.productsSection} id="products">
         <div className={style.sectionHeader}>
-          {/* <span>Товары</span> */}
-
           <h2 id="popular">Популярные товары</h2>
 
           <p>Популярный уход для вашей красоты и настроения.</p>
@@ -205,8 +207,6 @@ function Home() {
       {newProducts.length > 0 && (
         <section className={style.productsSection} id="new">
           <div className={style.sectionHeader}>
-            {/* <span>Новинки</span> */}
-
             <h2>Новые поступления</h2>
 
             <p>Свежие товары, которые недавно появились в магазине.</p>
@@ -221,8 +221,6 @@ function Home() {
       {discountProducts.length > 0 && (
         <section className={style.productsSection} id="discount">
           <div className={style.sectionHeader}>
-            {/* <span>Скидки</span> */}
-
             <h2>Скидочные товары</h2>
 
             <p>Товары со специальной ценой и выгодными предложениями.</p>
@@ -276,7 +274,7 @@ function Home() {
             target="_blank"
             rel="noreferrer"
           >
-            Перейти в Instagram
+            Перейти в Instagram <img className={style.instagramLogo} src={ins} alt="" />
           </a>
         </div>
 

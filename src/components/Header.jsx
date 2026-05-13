@@ -132,7 +132,7 @@ function Header() {
               </div>
             )}
 
-            <a
+            {/* <a
               className={style.instaBtn}
               href="https://www.instagram.com/limpopo_karakol/"
               target="_blank"
@@ -140,7 +140,7 @@ function Header() {
               onClick={closeMenu}
             >
               Instagram
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
